@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Google Play Регион | Инструкция по смене на США</title>
+    <!-- Шрифты и иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b1120;
+            background: radial-gradient(circle at 10% 20%, #1a2639, #0b1120);
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(18, 25, 40, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(56, 189, 248, 0.2) inset;
+            padding: 35px 30px;
+        }
+
+        /* Заголовок */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            background: linear-gradient(145deg, #2563eb, #38bdf8);
+            width: 65px;
+            height: 65px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            box-shadow: 0 15px 25px -8px #2563eb80;
+        }
+
+        .header-text h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .header-text p {
+            color: #9aa8c1;
+            font-size: 1.1rem;
+        }
+
+        /* Бейдж с США */
+        .us-badge {
+            background: #1e2b48;
+            border: 1px solid #3b82f6;
+            border-radius: 60px;
+            padding: 12px 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px #2563eb40;
+        }
+
+        .us-badge i {
+            color: #ffd700;
+        }
+
+        /* Сетка */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 28px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Карточки */
+        .card {
+            background: rgba(12, 20, 35, 0.7);
+            border-radius: 30px;
+            padding: 28px;
+            border: 1px solid #2d3a5e;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 20px 40px -20px #000000cc;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .card-title i {
+            background: #1e2b48;
+            padding: 12px;
+            border-radius: 18px;
+            color: #38bdf8;
+        }
+
+        /* Список шагов */
+        .step-list {
+            list-style: none;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 32px;
+        }
+
+        .step-marker {
+            background: #2563eb;
+            min-width: 48px;
+            height: 48px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: white;
+            box-shadow: 0 10px 20px -5px #2563eb;
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: white;
+        }
+
+        .step-content p {
+            color: #b0c0da;
+        }
+
+        /* Блок с данными карты */
+        .card-data {
+            background: #0f172a;
+            border-radius: 24px;
+            padding: 20px;
+            margin: 20px 0 25px;
+            border: 1px solid #38bdf8;
+            box-shadow: 0 10px 30px #2563eb30;
+        }
+
+        .card-data-title {
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .data-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            background: #1a253c;
+            padding: 18px;
+            border-radius: 18px;
+            margin-bottom: 12px;
+        }
+
+        .data-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .data-label {
+            font-size: 0.8rem;
+            color: #7e8aa8;
+        }
+
+        .data-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #b3d0ff;
+            word-break: break-word;
+        }
+
+        .data-value span {
+            background: #2d3f66;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .address-block {
+            background: #1a253c;
+            padding: 16px;
+            border-radius: 18px;
+            margin: 15px 0;
+            font-family: monospace;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .note-box {
+            background: #1e2a44;
+            border-radius: 18px;
+            padding: 16px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            border: 1px dashed #f59e0b;
+            margin-top: 20px;
+        }
+
+        .note-box i {
+            color: #fbbf24;
+            font-size: 1.8rem;
+        }
+
+        .note-box p {
+            color: #f0e9d0;
+        }
+
+        /* Блок ошибки и финала */
+        .error-box {
+            background: #2f1f2b;
+            border: 1px solid #f87171;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .error-box i {
+            color: #f87171;
+            font-size: 2rem;
+        }
+
+        .success-box {
+            background: #1c3b2b;
+            border: 1px solid #4ade80;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .btn-action {
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+            padding: 18px 28px;
+            border-radius: 60px;
+            border: none;
+            width: 100%;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 12px 25px #2563eb;
+            margin-top: 25px;
+        }
+
+        .btn-action:hover {
+            background: #3b82f6;
+            transform: scale(1.02);
+            box-shadow: 0 18px 35px #2563eb;
+        }
+
+        /* Правая карточка (Google Play) */
+        .play-badge {
+            background: #1e2b48;
+            border-radius: 20px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #38bdf8;
+        }
+
+        .play-badge i {
+            font-size: 2rem;
+            color: #38bdf8;
+        }
+
+        .instruction-mini {
+            background: #0f1a2f;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .alert-account {
+            background: #1e293b;
+            border-radius: 24px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            border: 1px solid #f97316;
+        }
+
+        .alert-account i {
+            font-size: 2.2rem;
+            color: #f97316;
+        }
+
+        .alert-account p {
+            font-size: 1.1rem;
+            flex: 1;
+        }
+
+        .highlight {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+
+        .copy-btn {
+            background: #2d3f66;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-btn:hover {
+            background: #3b5b99;
+        }
+
+        hr {
+            border: 0.5px solid #25344f;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <div class="header">
+            <div class="logo">
+                <i class="fab fa-google-play"></i>
+            </div>
+            <div class="header-text">
+                <h1>Смена региона на США</h1>
+                <p>Рабочий метод 2026 • Google Play Market</p>
+            </div>
+        </div>
+
+        <!-- Бейдж США -->
+        <div class="us-badge">
+            <i class="fas fa-flag-usa"></i> Целевой регион: США (Соединённые Штаты)
+            <i class="fas fa-check-circle" style="color:#22c55e;"></i>
+        </div>
+
+        <!-- Основная сетка -->
+        <div class="grid-2">
+            <!-- ЛЕВАЯ КОЛОНКА: Payments.google.com (инструкция) -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-credit-card"></i> 1. Payments.google.com
+                </div>
+
+                <ol class="step-list" style="list-style-type: none; padding-left: 0;">
+                    <li class="step-item">
+                        <div class="step-marker">1</div>
+                        <div class="step-content">
+                            <h3>Перейдите на сайт</h3>
+                            <p>Откройте <strong style="color:#99c6ff;">payments.google.com</strong> и авторизуйтесь в своём аккаунте Google.</p>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-marker">2</div>
+                        <div class="step-content">
+                            <h3>➕ Добавить способ оплаты</h3>
+                            <p>В разделе "Способы оплаты" нажмите <strong>Добавить способ оплаты</strong>.</p>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-marker">3</div>
+                        <div class="step-content">
+                            <h3>Страна: США</h3>
+                            <p>Сначала выберите страну <span style="background:#2563eb; padding:3px 12px; border-radius:30px;">США</span>. Заполните форму данными ниже:</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <!-- Данные карты (акцент) -->
+                <div class="card-data">
+                    <div class="card-data-title"><i class="fas fa-lock-open" style="color:#10b981;"></i> ТЕСТОВЫЕ ДАННЫЕ (РАБОТАЮТ)</div>
+                    <div class="data-row">
+                        <div class="data-item">
+                            <span class="data-label">НОМЕР КАРТЫ</span>
+                            <span class="data-value">4521 8591 5924 0531</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">ММ/ГГ</span>
+                            <span class="data-value">07/31</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">CVC</span>
+                            <span class="data-value">924</span>
+                        </div>
+                    </div>
+                    <div class="address-block">
+                        <div><i class="fas fa-user" style="margin-right:10px;"></i> Имя владельца: любое (например, John Smith)</div>
+                        <div><i class="fas fa-map-pin"></i> Адрес: <strong>18th St nw</strong>, Washington, округ Колумбия</div>
+                        <div><i class="fas fa-city"></i> Город: Washington • Штат: Washington (DC)</div>
+                        <div><i class="fas fa-mail-bulk"></i> Почтовый индекс: <strong>98008</strong></div>
+                    </div>
+                    <div style="text-align: right;">
+                        <button class="copy-btn" onclick="copyCardData()"><i class="far fa-copy"></i> Скопировать всё</button>
+                    </div>
+                </div>
+
+                <!-- Блок ошибки -->
+                <div class="error-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <strong style="font-size:1.2rem;">Ошибка появится — это нормально!</strong><br>
+                        После нажатия "Сохранить" вылезет ошибка. Не пугайтесь.
+                    </div>
+                </div>
+
+                <!-- Продолжение шагов -->
+                <div style="margin-top:10px;">
+                    <div class="step-item" style="margin-bottom:15px;">
+                        <div class="step-marker" style="background:#2d3f66;">4</div>
+                        <div class="step-content">
+                            <h3>✖ Нажмите на крестик</h3>
+                            <p>Закройте уведомление об ошибке. Если система запросит подтверждение аккаунта — <strong style="color:#ffd966;">обязательно подтвердите</strong> (код из СМС или почты).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="note-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>Важно:</strong> карта не списывает деньги, данные тестовые. Ошибка — обязательный этап для "привязки" региона.</p>
+                </div>
+            </div>
+
+            <!-- ПРАВАЯ КОЛОНКА: Google Play Market -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fab fa-google-play"></i> 2. Google Play
+                </div>
+
+                <div class="play-badge">
+                    <i class="fas fa-cog"></i>
+                    <div>
+                        <div style="font-weight:700;">Настройки аккаунта</div>
+                        <div style="color:#9bb5ff;">Play Market → Настройки → Общие</div>
+                    </div>
+                </div>
+
+                <ol class="step-list" style="list-style-type: none;">
+                    <li class="step-item">
+                        <div class="step-marker" style="background:#16a34a;"><i class="fas fa-arrow-right"></i></div>
+                        <div class="step-content">
+                            <h3>Откройте Google Play</h3>
+                            <p>На телефоне зайдите в приложение Play Market.</p>
+                        </div>
+                    </li>
+                    <li class="step-item">
+                        <div class="step-marker" style="background:#16a34a;">➡️</div>
+                        <div class="step-content">
+                            <h3>Настройки ➔ Общие</h3>
+                            <p>Нажмите на иконку профиля → <strong>Настройки</strong> → <strong>Общие</strong> → <strong>Настройки аккаунта и устройства</strong>.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <!-- Результат -->
+                <div class="success-box">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <span style="font-size:1.3rem; font-weight:700;">Регион изменился на США</span><br>
+                        В разделе "Страна и профили" отобразится <strong style="color:#b0ffb0;">United States</strong>.
+                    </div>
+                </div>
+
+                <!-- Карточка если не меняется -->
+                <div class="instruction-mini">
+                    <i class="fas fa-exclamation-circle" style="color:#f97316; font-size:1.5rem; margin-right:10px;"></i>
+                    <span style="font-weight:600;">Если регион НЕ меняется:</span>
+                    <p style="margin-top:10px;">Создайте <strong>новый аккаунт Google</strong> и повторите процедуру с этими же данными карты. Новый аккаунт сразу переключится на США.</p>
+                </div>
+
+                <!-- Важное примечание про подтверждение -->
+                <div style="background:#1f2a44; border-radius:18px; padding:16px; border-left: 6px solid #3b82f6;">
+                    <i class="fas fa-shield-alt" style="color:#3b82f6; margin-right:10px;"></i>
+                    Подтверждение аккаунта (если просят) — обязательно сделайте, иначе регион не закрепится.
+                </div>
+            </div>
+        </div>
+
+        <!-- Нижний блок (большая подсказка про новый аккаунт) -->
+        <div class="alert-account">
+            <i class="fas fa-user-plus"></i>
+            <p>
+                <span class="highlight">❇️ СМЕНА РЕГИОНА НЕ ПРОИЗОШЛА?</span><br>
+                Создайте новый аккаунт Google Play и повторите всё с самого начала: зайдите на payments.google.com, добавьте карту (те же данные), проигнорируйте ошибку, подтвердите аккаунт. После этого в Play Market регион сразу станет США.
+            </p>
+            <button class="copy-btn" onclick="alert('Скопируйте: payments.google.com, карта 4521 8591 5924 0531, 07/31, CVC 924, адрес 18th St nw, Washington, 98008')"><i class="fas fa-copy"></i> Напомнить данные</button>
+        </div>
+
+        <!-- Дисклеймер (для безопасности) -->
+        <div style="margin-top: 25px; font-size:0.85rem; color:#5f739b; text-align:center; border-top: 1px solid #25344f; padding-top: 20px;">
+            <i class="fas fa-info-circle"></i> Данные карты тестовые, используются только для смены региона. Никаких реальных списаний не происходит. Инструкция актуальна на 2026 год.
+        </div>
+    </div>
+
+    <!-- Скрипт для копирования -->
+    <script>
+        function copyCardData() {
+            const text = `Номер карты: 4521 8591 5924 0531\nММ/ГГ: 07/31\nCVC: 924\nАдрес: 18th St nw, Washington, DC, почтовый индекс 98008`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Данные карты скопированы!');
+            }).catch(() => {
+                alert('Нажмите Ctrl+C для копирования');
+            });
+        }
+    </script>
+
+    <!-- Доп. кнопка копирования адреса -->
+    <script>
+        // Добавим возможность копировать номер карты по клику
+        document.querySelectorAll('.data-value, .address-block').forEach(el => {
+            el.addEventListener('dblclick', function() {
+                const text = this.innerText;
+                navigator.clipboard?.writeText(text).then(() => alert('Скопировано: ' + text.substring(0, 20) + '...'));
+            });
+        });
+    </script>
+</body>
+</html>
